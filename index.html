@@ -107,7 +107,7 @@
 <div class="wrap">
 
   <h1>Privacy Policy</h1>
-  <p class="meta">PlayTable &nbsp;•&nbsp; Effective date: October 28, 2026</p>
+  <p class="meta">PlayTable &nbsp;•&nbsp; Effective date: October 29, 2026</p>
 
   <p>
     PlayTable ("the app", "we", "us") is a collection of board, card and table
@@ -133,7 +133,11 @@
   <ul>
     <li>Your name, email address, phone number, or other contact details</li>
     <li>Any account or sign-in — the app has no user accounts</li>
-    <li>Precise or approximate location</li>
+    <li>Your location. On Android 11 and below the app has to hold the location
+        permission before the system will let it scan for Bluetooth devices, which
+        is the only reason it is requested and is explained in Section 8. The app
+        never asks the system where you are, and no location reaches us or anyone
+        else.</li>
     <li>Photos, camera, or microphone data</li>
     <li>Contacts, calendar, SMS, call logs, or files on your device</li>
     <li>Card numbers or bank details — see Section 5 on purchases</li>
@@ -275,14 +279,17 @@
 
   <h2>7. Nearby Play (Local Multiplayer)</h2>
   <p>
-    Nearby Play lets two devices on the same Wi-Fi network, or already paired over
-    Bluetooth, connect directly to each other to play a match — there is no server
-    in between, and we never see any of it. When you use this feature:
+    Nearby Play lets two devices on the same Wi-Fi network, or within Bluetooth
+    range of each other, connect directly to play a match. There is no server in
+    between, and we never see any of it. When you use this feature:
   </p>
   <ul>
     <li>Your chosen display name and the game you want to play are sent directly, device to device, to the opponent you connect with.</li>
     <li>Your device likewise receives the opponent's display name and their moves during the match.</li>
     <li>This exchange happens only over your local network or Bluetooth link, and only for the length of the session. It is not stored on any server, by us or anyone else, and is gone once the match ends.</li>
+    <li>While the Nearby Play screen is open, and only while it is open, the app broadcasts a short Bluetooth LE signal saying that a player here is looking for an opponent, and listens for the same signal from others. Both stop the moment you leave that screen, close the app, or turn Bluetooth off. Your phone is never made visible to Bluetooth devices in general.</li>
+    <li>That signal carries a random number identifying this installation and nothing else. It is not derived from your phone's hardware, it is not sent to us or to anyone but the device across the room, and it is used only to recognise that a player found over Wi-Fi and the same player found over Bluetooth are one person rather than two.</li>
+    <li>The app only sees devices running PlayTable: the filtering is done by the Bluetooth radio against this app's own identifier, so other phones, headsets and accessories nearby are never reported to it. It does not pair with anything, and it never connects to a device you have not chosen to invite or accept.</li>
   </ul>
 
   <h2>8. Permissions Used and Why</h2>
@@ -309,12 +316,16 @@
       <td>Needed to discover nearby devices by multicast (mDNS) on your local network while Nearby Play is open.</td>
     </tr>
     <tr>
-      <td><code>BLUETOOTH</code> (Android 11 and below)</td>
-      <td>Connecting to an already-paired Bluetooth device as an alternative to Wi-Fi for Nearby Play.</td>
+      <td><code>BLUETOOTH</code>, <code>BLUETOOTH_ADMIN</code> (Android 11 and below)</td>
+      <td>Broadcasting and listening for the Nearby Play signal, and connecting to the opponent you pick, as an alternative to Wi-Fi.</td>
     </tr>
     <tr>
-      <td><code>BLUETOOTH_CONNECT</code> (Android 12+)</td>
-      <td>The same purpose, using the permission newer Android versions require.</td>
+      <td><code>ACCESS_FINE_LOCATION</code> (Android 11 and below only)</td>
+      <td>Android 11 and below have no separate Bluetooth scanning permission, so the system requires the location permission before any app may scan for Bluetooth devices. The app requests it for that reason alone: it never asks the system for your position, and nothing location-related is collected, stored or shared. Newer Android versions are never asked for it.</td>
+    </tr>
+    <tr>
+      <td><code>BLUETOOTH_CONNECT</code>, <code>BLUETOOTH_SCAN</code>, <code>BLUETOOTH_ADVERTISE</code> (Android 12+)</td>
+      <td>The same purposes, using the permissions newer Android versions require: connecting to the opponent you pick, listening for nearby players, and broadcasting that you are looking for one. The scanning permission is declared with Android's <code>neverForLocation</code> flag, which tells the system the app must not derive your location from what it hears.</td>
     </tr>
     <tr>
       <td><code>WRITE_SETTINGS</code></td>
@@ -322,10 +333,12 @@
     </tr>
   </table>
   <p>
-    The app does <strong>not</strong> request location, camera, microphone,
-    contacts, storage, or SMS/call permissions. Bluetooth use is limited to
-    devices you have already paired in your system settings — the app never scans
-    for or pairs with new Bluetooth devices itself.
+    The app does <strong>not</strong> request camera, microphone, contacts,
+    storage, or SMS/call permissions, and does not request location on Android 12
+    or newer. Bluetooth is used only while the Nearby Play screen is open, only to
+    find other people running this app and connect to the one you choose. The app
+    never pairs with a device itself, and never makes your phone discoverable to
+    Bluetooth devices in general.
   </p>
 
   <h2>9. Children's Privacy</h2>
@@ -365,7 +378,7 @@
   </p>
 
   <footer>
-    <span class="pill">Effective October 28, 2026</span>
+    <span class="pill">Effective October 29, 2026</span>
   </footer>
 
 </div>
