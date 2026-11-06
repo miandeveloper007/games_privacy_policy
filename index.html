@@ -107,7 +107,7 @@
 <div class="wrap">
 
   <h1>Privacy Policy</h1>
-  <p class="meta">PlayTable &nbsp;•&nbsp; Effective date: October 29, 2026</p>
+  <p class="meta">PlayTable &nbsp;•&nbsp; Effective date: November 6, 2026</p>
 
   <p>
     PlayTable ("the app", "we", "us") is a collection of board, card and table
@@ -206,10 +206,12 @@
   <ul>
     <li><strong>Google</strong> (AdMob)</li>
     <li><strong>Meta</strong></li>
+    <li><strong>Liftoff Monetize</strong> (Liftoff Mobile, Inc., formerly Vungle)</li>
     <li>Other ad networks taking part in AdMob mediation. The set changes over
-      time; Google lists them at
-      <a href="https://support.google.com/admob/answer/9012903" rel="noopener">support.google.com/admob/answer/9012903</a>,
-      and we will tell you the current ones on request.</li>
+      time, and we will tell you the current ones on request. Google publishes the
+      ad technology partners that can be allowed or blocked through the consent
+      form described below at
+      <a href="https://support.google.com/admob/answer/9012903" rel="noopener">support.google.com/admob/answer/9012903</a>.</li>
   </ul>
 
   <h3>Your consent</h3>
@@ -267,9 +269,14 @@
       <td><a href="https://www.facebook.com/about/privacy" rel="noopener">facebook.com/about/privacy</a></td>
     </tr>
     <tr>
-      <td><strong>AdMob mediation networks</strong></td>
+      <td><strong>Liftoff Monetize</strong> (Liftoff Mobile, Inc., formerly Vungle)</td>
+      <td>For the ads it serves: advertising ID, approximate location from IP, device and app info, ad activity</td>
+      <td><a href="https://liftoff.ai/privacy-policy/" rel="noopener">liftoff.ai/privacy-policy</a></td>
+    </tr>
+    <tr>
+      <td><strong>Other AdMob mediation networks</strong></td>
       <td>For the ads they serve: advertising ID, approximate location from IP, device and app info, ad activity</td>
-      <td><a href="https://support.google.com/admob/answer/9012903" rel="noopener">List of networks</a></td>
+      <td><a href="https://support.google.com/admob/answer/9012903" rel="noopener">Ad technology partners</a></td>
     </tr>
   </table>
   <p>
@@ -287,8 +294,8 @@
     <li>Your chosen display name and the game you want to play are sent directly, device to device, to the opponent you connect with.</li>
     <li>Your device likewise receives the opponent's display name and their moves during the match.</li>
     <li>This exchange happens only over your local network or Bluetooth link, and only for the length of the session. It is not stored on any server, by us or anyone else, and is gone once the match ends.</li>
-    <li>While the Nearby Play screen is open, and only while it is open, the app broadcasts a short Bluetooth LE signal saying that a player here is looking for an opponent, and listens for the same signal from others. Both stop the moment you leave that screen, close the app, or turn Bluetooth off. Your phone is never made visible to Bluetooth devices in general.</li>
-    <li>That signal carries a random number identifying this installation and nothing else. It is not derived from your phone's hardware, it is not sent to us or to anyone but the device across the room, and it is used only to recognise that a player found over Wi-Fi and the same player found over Bluetooth are one person rather than two.</li>
+    <li>While the app is open, and only while it is open, it broadcasts a short Bluetooth LE signal saying that a player here is available to play. That stops the moment you put the app in the background, close it, or turn Bluetooth off. Listening for other players is narrower still: it runs only while the Nearby Play screen is open. Your phone is never made visible to Bluetooth devices in general.</li>
+    <li>That signal carries two things: a random number identifying this installation, and the display name you chose in the app, so the person across the room can tell which player is you. The random number is not derived from your phone's hardware, and your phone's own Bluetooth name is not used or sent. Neither reaches us or anyone but the nearby device. The random number exists only to recognise that a player found over Wi-Fi and the same player found over Bluetooth are one person rather than two.</li>
     <li>The app only sees devices running PlayTable: the filtering is done by the Bluetooth radio against this app's own identifier, so other phones, headsets and accessories nearby are never reported to it. It does not pair with anything, and it never connects to a device you have not chosen to invite or accept.</li>
   </ul>
 
@@ -301,7 +308,14 @@
     </tr>
     <tr>
       <td><code>com.google.android.gms.permission.AD_ID</code></td>
-      <td>Access to the device's resettable advertising ID, used by AdMob and Meta as described in Sections 3 and 6. Subject to your consent where consent is required.</td>
+      <td>Access to the device's resettable advertising ID, used by AdMob, Meta and Liftoff Monetize as described in Sections 3 and 6. Subject to your consent where consent is required.</td>
+    </tr>
+    <tr>
+      <td><code>com.amazon.privacypass.ATTEST</code></td>
+      <td>Declared by the Liftoff Monetize advertising component and used only on Amazon
+          devices, where it lets that component confirm an ad request is genuine rather than
+          automated fraud. It is granted automatically, never prompts you, and does nothing on
+          a phone from the Google Play Store.</td>
     </tr>
     <tr>
       <td><code>com.android.vending.BILLING</code></td>
@@ -378,7 +392,7 @@
   </p>
 
   <footer>
-    <span class="pill">Effective October 29, 2026</span>
+    <span class="pill">Effective November 6, 2026</span>
   </footer>
 
 </div>
